@@ -1,5 +1,11 @@
 const fs = require('fs');
 
+let listTable = (base, limit = 10) => {
+    for (let i = 1; i <= limit; i++) {
+        console.log((`${base} * ${i} = ${ base * i}\n`));
+    }
+};
+
 let createFile = (base) => {
     return new Promise((resolve, reject) => {
 
@@ -22,5 +28,6 @@ let createFile = (base) => {
 };
 
 module.exports = {
-    createFile
+    createFile,
+    listTable
 };
