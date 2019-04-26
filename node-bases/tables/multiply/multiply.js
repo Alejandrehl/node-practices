@@ -6,7 +6,7 @@ let listTable = (base, limit = 10) => {
     }
 };
 
-let createFile = (base) => {
+let createFile = (base, limit = 10) => {
     return new Promise((resolve, reject) => {
 
         if (!Number(base)) {
@@ -16,7 +16,7 @@ let createFile = (base) => {
 
         let data = '';
 
-        for (let i = 1; i <= 10; i++) {
+        for (let i = 1; i <= limit; i++) {
             data += (`${base} * ${i} = ${ base * i}\n`);
         }
 
