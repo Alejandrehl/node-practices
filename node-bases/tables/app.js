@@ -1,5 +1,6 @@
 const { createFile, listTable } = require('./multiply/multiply');
 const argv = require('./config/yargs').argv;
+const colors = require('colors');
 
 let command = argv._[0];
 
@@ -9,8 +10,8 @@ switch (command) {
         break;
     case 'create':
         createFile(argv.base, argv.limit)
-            .then(file => console.log(`Created file: ${file}`))
-            .catch(err => console.log(`Error: ${err}`));
+            .then(file => console.log(`Created file: ${file}`.green))
+            .catch(err => console.log(`Error: ${err}`.red));
         break;
     default:
         console.log('Command not found.');
